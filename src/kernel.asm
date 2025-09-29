@@ -25,4 +25,5 @@ _start:
     call kernel_main
     jmp $
 
+
     times 512-($ - $$) db 0
