@@ -1,7 +1,8 @@
 #include "kernel.h"
-#include "idt/idt.h"
 #include <stddef.h>
 #include <stdint.h>
+#include "idt/idt.h"
+#include "io/io.h"
 
 
 uint16_t* video_mem = 0;
