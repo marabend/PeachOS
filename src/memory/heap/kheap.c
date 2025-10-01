@@ -13,9 +13,19 @@ void kheap_init()
     kernel_heap_table.total = total_table_entries;
 
     void* end = (void*)(PEACHOS_HEAP_ADDRESS + PEACHOS_HEAP_SIZE_BYTES);
-    int res = heap_create(&kernen_heap, (void*)(PEACHOS_HEAP_ADDRESS), end, &kernel_heap_table);
+    int res = heap_create(&kernel_heap, (void*)(PEACHOS_HEAP_ADDRESS), end, &kernel_heap_table);
     if(res < 0)
     {
         print("Failed to create heap\n");
     }
+}
+
+void* kmalloc(size_t size)
+{
+    return heap_malloc(&kernel_heap, size);
+}
+
+void kfree(void* ptr)
+{
+    heap_free(&kernel_heap, ptr);
 }
