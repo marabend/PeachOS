@@ -81,6 +81,9 @@ void kernel_main()
     terminal_initialize();
     print("Hello world!\ntest");
 
+    // Search and initialize the disks
+    disk_search_and_init();
+
     // Initialize the heap
     kheap_init();
 
