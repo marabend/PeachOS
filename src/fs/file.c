@@ -59,7 +59,7 @@ void fs_init()
 
 static int file_new_descriptor(struct file_descriptor** desc_out)
 {
-    int res = -ENOMEN;
+    int res = -ENOMEM;
     for (int i = 0; i < PEACHOS_MAX_FILE_DESCRIPTORS; i++)
     {
         struct file_descriptor* desc = kzalloc(sizeof(struct file_descriptor));

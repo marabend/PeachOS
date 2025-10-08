@@ -101,7 +101,7 @@ int heap_get_start_block(struct heap* heap, uint32_t total_blocks)
 
     if (bs == -1)
     {
-        return -ENOMEN;
+        return -ENOMEM;
     }
 
     return bs;
