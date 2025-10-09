@@ -286,5 +286,9 @@ out:
 
 void* fat16_open(struct disk* disk, struct path_part* path, FILE_MODE mode)
 {
+    if (mode != FILE_MODE_READ)
+    {
+        return ERROR(-ERDONLY);
+    }
     return 0;
 }
