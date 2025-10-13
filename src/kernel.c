@@ -102,7 +102,11 @@ void kernel_main()
     int fd = fopen("0:=/hello.txt", "r");
     if (fd)
     {
-        print("We opened hello.txt\n");
+        struct file_stat s;
+        fstat(fd, &s);
+        fclose(fd);
+
+        print("testing\n");
     }
     while(1){}
 }
