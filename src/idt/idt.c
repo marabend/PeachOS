@@ -55,3 +55,11 @@ void idt_init()
     // load the interrupt descriptor table
     idt_load(&idtr_descriptor);
 }
+
+void* isr80_handler(int command, struct interrupt_frame* frame)
+{
+    void* res = 0;
+    kernel_page();
+    task_current_save_state(frame);
+    
+}
