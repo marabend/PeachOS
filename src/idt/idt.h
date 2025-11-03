@@ -2,6 +2,9 @@
 #define IDT_H
 #include <stdint.h>
 
+struct interrupt_frame;
+typedef void*(*ISR80H_COMMAND)(struct interrupt_frame* frame);
+
 struct idt_desc
 {
     uint16_t offset_1; // Offset bits 0 - 15
@@ -36,6 +39,7 @@ struct interrupt_frame
 
 void idt_init();
 void enable_interrupts();
+void isr80h_register_command(int command_id, ISR80H_COMMAND command);
 void disable_interrupts();
 
 #endif

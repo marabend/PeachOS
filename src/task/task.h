@@ -4,7 +4,7 @@
 #include "config.h"
 #include "memory/paging/paging.h"
 
-struct interruptframe;
+struct interrupt_frame;
 
 struct registers
 {

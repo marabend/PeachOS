@@ -2,7 +2,7 @@ section .asm
 
 extern int21h_handler
 extern no_interrupt_handler
-extern isr80_handler
+extern isr80h_handler
 
 global int21h
 global idt_load
